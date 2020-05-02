@@ -1,0 +1,126 @@
+<app-header></app-header>
+<div class="cotainer">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"><b>Register</b></div>
+                <div class="card-body">
+                    <form name="my-form" action="" method="">
+                        <div class="form-group row">
+                            <label for="first_name" class="col-md-4 col-form-label text-md-right"><mark>*</mark>First
+                                Name</label>
+                            <div class="col-md-6">
+                                <input type="text" id="fisrt_name" class="form-control" name="firstName"
+                                    [(ngModel)]="user.firstName">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="last_name" class="col-md-4 col-form-label text-md-right"><mark>*</mark>Last
+                                Name</label>
+                            <div class="col-md-6">
+                                <input type="text" id="last_name" class="form-control" name="lastName"
+                                    [(ngModel)]="user.lastName">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="business_unit"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Business
+                                Unit</label>
+                            <div class="col-md-6">
+                                <input type="text" id="business-unit" class="form-control" name="businessUnit"
+                                    [(ngModel)]="user.businessUnit">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="title" class="col-md-4 col-form-label text-md-right"><mark>*</mark>Title</label>
+                            <div class="col-md-6">
+                                <input type="text" id="title" class="form-control" name="title"
+                                    [(ngModel)]="user.title">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="username" class="col-md-4 col-form-label text-md-right"><mark>*</mark>E-Mail
+                            </label>
+                            <div class="col-md-6">
+                                <input type="email" id="username" class="form-control" name="username"
+                                    [(ngModel)]="user.userName">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Telephone"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Telephone</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Telephone" class="form-control" name="phoneNumber"
+                                    [(ngModel)]="user.phoneNumber">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="present_address"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Present
+                                Address</label>
+                            <div class="col-md-6">
+                                <input type="text" id="present_address" class="form-control" name="address1"
+                                    [(ngModel)]="user.address1">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="permanent_address"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Permanent
+                                Address</label>
+                            <div class="col-md-6">
+                                <input type="text" id="permanent_address" class="form-control" name="address2"
+                                    [(ngModel)]="user.address2">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-md-4 col-form-label text-md-right"><mark>*</mark>City</label>
+                            <div class="col-md-6">
+                                <input type="text" id="city" class="form-control" name="city" [(ngModel)]="user.city">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group row">
+                            <label for="state" class="col-md-4 col-form-label text-md-right"><mark>*</mark>State</label>
+                            <div class="col-md-6">
+                                <input type="text" id="state" class="form-control" name="state"
+                                    [(ngModel)]="user.state">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="Country"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Country</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Country" class="form-control" name="Country"
+                                    [(ngModel)]="user.country">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="zip_number" class="col-md-4 col-form-label text-md-right"><abbr
+                                    title="National Id Card"><mark>*</mark>ZIP</abbr> Number</label>
+                            <div class="col-md-6">
+                                <input type="text" id="zip_number" class="form-control" name="zip-number"
+                                    [(ngModel)]="user.zip">
+                            </div>
+                        </div>
+                        <div class="col-md-6 offset-md-5">
+                            <input type="submit" class="fadeIn fourth" routerLink="/review" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

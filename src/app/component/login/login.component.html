@@ -1,0 +1,26 @@
+<app-adminheader></app-adminheader>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://img.icons8.com/color/1000/000000/user.png" id="icon" height="150" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="main" id="loginForm">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/forgot">Forgot Password?</a>
+      &nbsp;&nbsp;
+      <a class="underlineHover" routerLink="/register">SignUp</a>  
+    </div>
+
+  </div>
+</div>
