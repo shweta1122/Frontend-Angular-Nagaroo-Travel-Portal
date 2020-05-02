@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserDataService } from 'src/app/user-data-service';
 import { User } from 'src/app/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-review',
@@ -9,14 +10,15 @@ import { User } from 'src/app/user';
 })
 export class ReviewComponent implements OnInit, OnDestroy {
 
-  message: string = "just for test";
-  user:User;
+  // message: string = "just for test";
+  user: User;
+  // message: any;
 
-  constructor(public dataservice : UserDataService) { }
+  constructor(public dataservice: UserDataService, private router: Router) { }
 
 
   ngOnDestroy() {
-    this.user =null
+    this.user = null
   }
 
   ngOnInit() {
@@ -24,8 +26,8 @@ export class ReviewComponent implements OnInit, OnDestroy {
     this.user = this.dataservice.user
   }
 
-  
-//print sestion part
+
+  //print sestion part
   printComponent(cmpName) {
     let printContents = document.getElementById(cmpName).innerHTML;
     let originalContents = document.body.innerHTML;
@@ -35,5 +37,13 @@ export class ReviewComponent implements OnInit, OnDestroy {
     window.print();
 
     document.body.innerHTML = originalContents;
+  }
+
+  public registerNow() {
+    let response = this.dataservice.doRegistration(this.user);
+    response.subscribe();
+    this.router.navigate(['/'])
+
+
   }
 }

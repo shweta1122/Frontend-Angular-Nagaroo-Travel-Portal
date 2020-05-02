@@ -1,5 +1,9 @@
 <app-header></app-header>
 
+<!-- <div>
+   <h1>{{message}}</h1> 
+</div> -->
+
 <div class="cotainer">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -76,7 +80,7 @@
                         <div class="col-md-10">
                             <input type="submit" (click)="printComponent('printsection')" value="Print">
                             <input type="submit" routerLink="/register" value="Edit">
-                            <input type="submit" routerLink="/" value="Return to Login">
+                            <input type="submit"  value="Return to Login" (click) ="registerNow()">
                         </div>
                     </form>
                 </div>
