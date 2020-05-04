@@ -19,6 +19,7 @@ import { UserDataService } from './user-data-service';
 import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
 import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +41,11 @@ import { AddTicketComponent } from './component/add-ticket/add-ticket.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
-  providers: 
-   [UserDataService],
+  providers:
+    [UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/user-data-service';
-
+ 
 @Component({
   selector: 'app-employee-dashboard',
   templateUrl: './employee-dashboard.component.html',
@@ -8,29 +8,29 @@ import { UserDataService } from 'src/app/user-data-service';
 })
 export class EmployeeDashboardComponent implements OnInit {
   
-  id : any
-  token : any
+// Pagination parameters.
+  p = 1;
+  count = 5;
+  //corona api
+  public showMe = false;
+ 
   ticketData : any
   constructor(private service: UserDataService) { }
-
+ 
   ngOnInit(): void {
-    this. id = (sessionStorage.getItem('id'))
-    this. token = (sessionStorage.getItem('token'))
-   // console.log("hi this is token", this.token)
-
+    let id = (sessionStorage.getItem('id'))
+    let token = (sessionStorage.getItem('token'))
+    console.log("hi this is token", token)
+ 
     let credential = {
-      id: this.id,
-      token: this.token
+      id: id,
+      token: token
     }
     this.getTicket(credential)
-
-
   }
-
-
-
+ 
   getTicket(credential) {
-   // console.log("----------", credential)
+    console.log("----------", credential)
     let id = credential.id
     let token = credential.token
     sessionStorage.setItem('id', id)
@@ -38,16 +38,11 @@ export class EmployeeDashboardComponent implements OnInit {
     let response = this.service.getTicket(credential);
     response.subscribe(data => this.setView(data))
   }
-
+ 
   setView(ticketData) {
-
     this.ticketData=ticketData
-    //console.log(ticketData)
+    console.log(ticketData)
   }
-
-  addTicket() {
-    
-  }
-
 }
 
+ 
