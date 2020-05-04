@@ -12,6 +12,7 @@ import { AdminloginComponent } from './component/adminlogin/adminlogin.component
 import { AdminviewComponent } from './component/adminview/adminview.component';
 import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
 import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
+import { UpdateTicketComponent } from './component/update-ticket/update-ticket.component';
 
 const routes: Routes = [
 
@@ -33,6 +34,10 @@ const routes: Routes = [
 
   },
 
+  {
+    path: 'employee-dashboard/update/:id' , component : UpdateTicketComponent,
+  },
+
   //admin router
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'adminview', component: AdminviewComponent },
@@ -40,6 +45,7 @@ const routes: Routes = [
   //Add ticket
   { path: 'addTicket', component: AddTicketComponent },
 
+ 
 
   //for home page
   {

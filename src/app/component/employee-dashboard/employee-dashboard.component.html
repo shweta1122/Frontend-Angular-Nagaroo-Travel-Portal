@@ -9,7 +9,7 @@
         <th scope="col">Date of Submisson</th>
         <th scope="col">Date of Updation</th>
         <th scope="col">Status</th>
-        <th scope="col"><a class="btn btn-sm btn-success" href="#">Add new tickect</a></th>
+        <th scope="col"><a class="btn btn-sm btn-success"routerLink = "/addTicket">Add new tickect</a></th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@
         <td>{{item.updatedAt}}</td>
         <td>{{item.status}}</td>
         <td>
-          <a class="btn btn-sm btn-primary" href="#">Edit</a>
+          <a class="btn btn-sm btn-primary" [routerLink] = "['/employee-dashboard/update',item.id]" >Edit</a>
         </td>
       </tr>
     </tbody>

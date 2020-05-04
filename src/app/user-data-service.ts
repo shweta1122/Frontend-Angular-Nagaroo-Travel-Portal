@@ -47,6 +47,23 @@ export class UserDataService {
 
     }
 
+
+    public updateTicket(credential, ticket,ticketId) {
+        console.log("this is ricket", ticket)
+        console.log("---------------inside add a ticket",credential.token)
+        console.log(ticketId)
+        let tokenStr = 'Bearer ' + credential.token;
+       // console.log(tokenStr)
+        const header = new HttpHeaders().set("Authorization",tokenStr)
+      //  console.log("---------",header)
+        
+        let id = credential.id
+       // console.log("this is id", id)
+       
+        return this.http.put("http://localhost:9090/tickets/"+id+"/tickets/"+ticketId,ticket,{headers : header})
+
+    }
+
     public forgotPassword(userName) {
         return this.http.post("http://localhost:9090/employee/forgot",
             userName);

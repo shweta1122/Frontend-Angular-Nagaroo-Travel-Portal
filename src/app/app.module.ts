@@ -20,6 +20,7 @@ import { EmployeeDashboardComponent } from './component/employee-dashboard/emplo
 import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UpdateTicketComponent } from './component/update-ticket/update-ticket.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AdminviewComponent,
     EmployeeDashboardComponent,
     AddTicketComponent,
+    UpdateTicketComponent,
   ],
   imports: [
     BrowserModule,
