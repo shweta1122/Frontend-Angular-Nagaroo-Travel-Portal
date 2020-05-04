@@ -11,6 +11,7 @@ import { ReviewComponent } from './component/review/review.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminviewComponent } from './component/adminview/adminview.component';
 import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
+import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,9 @@ const routes: Routes = [
   //admin router
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'adminview', component: AdminviewComponent },
+
+  //Add ticket
+  { path: 'addTicket', component: AddTicketComponent },
 
 
   //for home page

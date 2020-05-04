@@ -8,18 +8,19 @@ import { UserDataService } from 'src/app/user-data-service';
 })
 export class EmployeeDashboardComponent implements OnInit {
   
-
+  id : any
+  token : any
   ticketData : any
   constructor(private service: UserDataService) { }
 
   ngOnInit(): void {
-    let id = (sessionStorage.getItem('id'))
-    let token = (sessionStorage.getItem('token'))
-    console.log("hi this is token", token)
+    this. id = (sessionStorage.getItem('id'))
+    this. token = (sessionStorage.getItem('token'))
+   // console.log("hi this is token", this.token)
 
     let credential = {
-      id: id,
-      token: token
+      id: this.id,
+      token: this.token
     }
     this.getTicket(credential)
 
@@ -29,7 +30,7 @@ export class EmployeeDashboardComponent implements OnInit {
 
 
   getTicket(credential) {
-    console.log("----------", credential)
+   // console.log("----------", credential)
     let id = credential.id
     let token = credential.token
     sessionStorage.setItem('id', id)
@@ -41,7 +42,11 @@ export class EmployeeDashboardComponent implements OnInit {
   setView(ticketData) {
 
     this.ticketData=ticketData
-    console.log(ticketData)
+    //console.log(ticketData)
+  }
+
+  addTicket() {
+    
   }
 
 }

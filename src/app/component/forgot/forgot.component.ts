@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from 'src/app/user-data-service';
 
 @Component({
   selector: 'app-forgot',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot.component.css']
 })
 export class ForgotComponent implements OnInit {
-
-  constructor() { }
+  email : string
+  constructor(private service : UserDataService) { }
 
   ngOnInit(): void {
+  }
+
+
+
+  onSubmit() {
+    console.log(this.email)
+    let response = this.service.forgotPassword(this.email)
+    response.subscribe()
+
   }
 
 }

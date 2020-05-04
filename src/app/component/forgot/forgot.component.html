@@ -16,11 +16,11 @@
                             </label>
                             <div class="col-md-6">
                                 <input type="email" id="username" placeholder="abc@nagarro.com" class="form-control"
-                                    name="username" required>
+                                    name="username" ngModel = "email"required>
                             </div>
                         </div>
                         <div class="col-md-10 offset-md-4">
-                            <input type="submit" routerLink="/" value="Submit">
+                            <input type="submit" (click) = "onSubmit()" value="Submit">
                             <input type="submit" routerLink="/login" value="Back to the Log-In Page">
                         </div>
                     </form>

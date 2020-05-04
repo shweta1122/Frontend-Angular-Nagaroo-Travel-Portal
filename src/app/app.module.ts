@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 import { UserDataService } from './user-data-service';
 import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
+import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EmployeeDashboardComponent } from './component/employee-dashboard/emplo
     AdminheaderComponent,
     AdminviewComponent,
     EmployeeDashboardComponent,
+    AddTicketComponent,
   ],
   imports: [
     BrowserModule,

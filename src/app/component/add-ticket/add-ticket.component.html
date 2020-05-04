@@ -1,0 +1,126 @@
+<app-header></app-header>
+<div class="cotainer">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"><b>Add a Ticket</b></div>
+                <div class="card-body">
+                    <form name="my-form" action="" method="">
+                        <div class="form-group row">
+                            <label for="requestType" class="col-md-4 col-form-label text-md-right"><mark>*</mark>Request Type
+                               </label>
+                            <div class="col-md-6">
+                                <input type="text" id="requestType" class="form-control" name="requestType"
+                                    [(ngModel)]="ticket.requestType">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="priority" class="col-md-4 col-form-label text-md-right"><mark>*</mark>priority
+                                </label>
+                            <div class="col-md-6">
+                                <input type="text" id="priority" class="form-control" name="priority"
+                                    [(ngModel)]="ticket.priority">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="travelCity"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>travelCity
+                                </label>
+                            <div class="col-md-6">
+                                <input type="text" id="travelCity" class="form-control" name="travelCity"
+                                    [(ngModel)]="ticket.travelCity">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fromLocation" class="col-md-4 col-form-label text-md-right"><mark>*</mark>fromLocation</label>
+                            <div class="col-md-6">
+                                <input type="text" id="fromLocation" class="form-control" name="fromLocation"
+                                    [(ngModel)]="ticket.fromLocation">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="travelStartDate" class="col-md-4 col-form-label text-md-right"><mark>*</mark>travelStartDate
+                            </label>
+                            <div class="col-md-6">
+                                <input type="travelStartDate" id="travelStartDate" class="form-control" name="travelDate"
+                                    [(ngModel)]="ticket.travelDate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="travelEndDate"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>travelEndDate</label>
+                            <div class="col-md-6">
+                                <input type="text" id="travelEndDate" class="form-control" name="endDate"
+                                    [(ngModel)]="ticket.endDate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="present_address"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>passportNumber
+                                </label>
+                            <div class="col-md-6">
+                                <input type="text" id="passportNumber" class="form-control" name="passportNumber"
+                                    [(ngModel)]="ticket.passportNumber">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="permanent_address"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>expenseBornBy
+                                </label>
+                            <div class="col-md-6">
+                                <input type="text" id="expenseBornBy" class="form-control" name="expenseBornBy"
+                                    [(ngModel)]="ticket.expenseBornBy">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="projectName" class="col-md-4 col-form-label text-md-right"><mark>*</mark>projectName</label>
+                            <div class="col-md-6">
+                                <input type="text" id="projectName" class="form-control" name="travelAprrover" [(ngModel)]="ticket.projectName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="travelAprrover" class="col-md-4 col-form-label text-md-right"><mark>*</mark>travelAprrover</label>
+                            <div class="col-md-6">
+                                <input type="text" id="projectName" class="form-control" name="projectName" [(ngModel)]="ticket.projectName">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group row">
+                            <label for="upperBound" class="col-md-4 col-form-label text-md-right"><mark>*</mark>upperBound</label>
+                            <div class="col-md-6">
+                                <input type="text" id="upperBound" class="form-control" name="upperBound"
+                                    [(ngModel)]="ticket.upperBound">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="additionalDetail"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>additionalDetail</label>
+                            <div class="col-md-6">
+                                <input type="text" id="additionalDetail" class="form-control" name="additionalDetail"
+                                    [(ngModel)]="ticket.additionalDetail">
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6 offset-md-5">
+                            <input type="submit" class="fadeIn fourth" (click) ="addTicket()" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

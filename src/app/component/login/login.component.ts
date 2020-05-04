@@ -3,7 +3,7 @@ import { UserDataService } from 'src/app/user-data-service';
 import { tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { UserCredential } from 'src/app/user-credential';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { UserCredential } from 'src/app/user-credential';
 })
 export class LoginComponent implements OnInit {
   ticketData: any
-  credential : UserCredential = new UserCredential()
+  
   constructor(private service: UserDataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -53,5 +53,7 @@ export class LoginComponent implements OnInit {
 
 
   }
+
+ 
 
 }
