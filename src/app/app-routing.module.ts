@@ -10,6 +10,7 @@ import { ForgotComponent } from './component/forgot/forgot.component';
 import { ReviewComponent } from './component/review/review.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminviewComponent } from './component/adminview/adminview.component';
+import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
 
 const routes: Routes = [
 
@@ -28,14 +29,12 @@ const routes: Routes = [
   //  routeing for forgot password
   {
     path: 'forgot', component: ForgotComponent,
-    children: [
-      { path: 'login', component: LoginComponent }
-    ]
+
   },
-  
+
   //admin router
-  {path:'adminlogin',component:AdminloginComponent},
-  {path:'adminview',component:AdminviewComponent},
+  { path: 'adminlogin', component: AdminloginComponent },
+  { path: 'adminview', component: AdminviewComponent },
 
 
   //for home page
@@ -43,8 +42,8 @@ const routes: Routes = [
     path: '', component: HomelayoutComponent,
     children: [
       {
-        path: 'main',
-        component: MaincontentComponent,
+        path: 'employee-dashboard',
+        component: EmployeeDashboardComponent,
       }
     ]
   },

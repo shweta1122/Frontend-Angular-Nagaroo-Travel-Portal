@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomelayoutComponent } from './layout/homelayout/homelayout.component';
@@ -17,6 +16,7 @@ import { AdminviewComponent } from './component/adminview/adminview.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 import { UserDataService } from './user-data-service';
+import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { UserDataService } from './user-data-service';
     AdminloginComponent,
     AdminheaderComponent,
     AdminviewComponent,
+    EmployeeDashboardComponent,
   ],
   imports: [
     BrowserModule,
