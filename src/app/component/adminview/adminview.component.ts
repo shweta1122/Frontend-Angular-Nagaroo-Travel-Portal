@@ -20,4 +20,12 @@ export class AdminviewComponent implements OnInit {
     
   }
 
+  updateStatus(status) {
+    console.log(status)
+    console.log(this.ticketData)
+    let response = this.service.updateStatus(status,this.ticketData.id)
+    response.subscribe();
+
+  }
+
 }

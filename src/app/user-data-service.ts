@@ -85,4 +85,11 @@ export class UserDataService {
             user, { responseType: 'text' as 'json' });
     }
 
+
+    public updateStatus(status, ticketId) {
+        console.log(ticketId);
+
+        return this.http.patch("http://localhost:9090/admin/ticket/" +  1 , {status})
+    }
+
 }
