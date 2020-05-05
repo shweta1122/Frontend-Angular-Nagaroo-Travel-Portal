@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/user-data-service';
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'app-employee-dashboard',
@@ -15,7 +16,7 @@ export class EmployeeDashboardComponent implements OnInit {
   public showMe = false;
  
   ticketData : any
-  constructor(private service: UserDataService) { }
+  constructor(private service: UserDataService, private router : Router) { }
  
   ngOnInit(): void {
     let id = (sessionStorage.getItem('id'))
@@ -42,6 +43,12 @@ export class EmployeeDashboardComponent implements OnInit {
   setView(ticketData) {
     this.ticketData=ticketData
     console.log(ticketData)
+  }
+
+
+  logOut() {
+    sessionStorage.clear()
+    this.router.navigate(['/'])
   }
 }
 

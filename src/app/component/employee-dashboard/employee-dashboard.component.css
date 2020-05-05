@@ -1,0 +1,19 @@
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 225px;
+}
+.travel-portal{
+    font-size: 25px;
+    font-weight: bold;
+    color: #f6ac3d;
+}
