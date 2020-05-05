@@ -28,7 +28,7 @@ export class UpdateTicketComponent implements OnInit {
   updateTicket() {
     console.log(this.ticket)
     
-    console.log("hi this is token", this.token)
+   
 
     let credential = {
       id: this.id,

@@ -21,6 +21,7 @@ import { AddTicketComponent } from './component/add-ticket/add-ticket.component'
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateTicketComponent } from './component/update-ticket/update-ticket.component';
+import { PdfUploadComponent } from './component/pdf-upload/pdf-upload.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { UpdateTicketComponent } from './component/update-ticket/update-ticket.c
     EmployeeDashboardComponent,
     AddTicketComponent,
     UpdateTicketComponent,
+    PdfUploadComponent,
   ],
   imports: [
     BrowserModule,

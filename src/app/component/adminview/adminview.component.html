@@ -83,11 +83,11 @@
           <!-- <a class="btn btn-sm btn-primary" [routerLink] = "['/admin/updateTicketInfo',item.id]" >ViewTicket</a> -->
         </td>
         <td>
-                    <a class="btn btn-sm btn-primary" role="button" [routerLink] = "">attachment</a>
+                    <a class="btn btn-sm btn-primary" role="button" [routerLink] ="['uploadPdf',item.id,item.employee.id]">attachment</a>
                   </td>
 
 
-        <td><a href="#">Add comment</a></td>
+       
       </tr>
     </tbody>
   </table>

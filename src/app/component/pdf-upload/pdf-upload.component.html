@@ -1,0 +1,13 @@
+<form >
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Choose File</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+
+    <div class="form-group">
+        <label for="comments">comments</label>
+        <textarea class="form-control" id="comments" name="comments" rows="3" [(ngModel)] = "comments"></textarea>
+      </div>
+
+      <button type="button" class="btn btn-primary" (click) = "upload()">Submit</button>
+  </form>
