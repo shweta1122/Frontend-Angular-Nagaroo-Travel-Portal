@@ -1,69 +1,102 @@
-<div class="container">
-    <table class="table table-hover table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Ticket Id</th>
-          <th scope="col">Project name</th>
-          <th scope="col">Request Type</th>
-          <th scope="col">Priority</th>
-          <th scope="col">Travel city</th>
-          <th scope="col">Date of Submisson</th>
-          <th scope="col">Date of Updation</th>
-          <th scope="col">Status</th>
-          <th scope="col">Employee Id</th>
-          
-          <div class="btn-group dropup">
-            <button type="button" class="btn btn-secondary">
-              Split dropup
-            </button>
-            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu">
-              <!-- Dropdown menu links -->
+<!------ Include the above in your HEAD tag ---------->
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+  <div class="container">
+    <img src="assets/image/nagarro logo.png" alt="Nagarro Travel Portal">
+    <p class="travel-portal">Travel Portal</p>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <!-- <a class="nav-link" routerLink="/adminlogin">Admin Login</a> -->
+
+          <div class="dropdown nav-link">
+            <button class="dropbtn btn btn-primary">Sort</button>
+            <div class="dropdown-content">
+              <a href="#">Priority</a>
+              <a href="#">Date</a>
             </div>
           </div>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of ticketData | paginate: { itemsPerPage: count, currentPage: p }">
-          <td>{{item.id}}</td>
-          <td>{{item.projectName}}</td>
-          <td>{{item.requestType}}</td>
-          <td>{{item.priority}}</td>
-          <td>{{item.travelCity}}</td>
-          <td>{{item.createdAt}}</td>
-          <td>{{item.updatedAt}}</td>
-          <td>{{item.status}}</td>
-          <td>{{item.employee.userName}}</td>
-          <td>
-            <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Update Status
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/PrioritySort">Approved</a>
-                  <a class="dropdown-item" href="/StatusSort">Reject</a>
-              </div>
-          </div>
-            <!-- <a class="btn btn-sm btn-primary" [routerLink] = "['/admin/updateTicketInfo',item.id]" >ViewTicket</a> -->
-          </td>
-          <td><button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-           Upload PDF
-        </button></td>
 
-        <td><a href = "#">Add comment</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <!--Including the pagination control.-->
-    <div class="text-right">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" routerLink="/adminlogin">Admin Login</a> -->
+          <div class="dropdown nav-link">
+            <button class="dropbtn btn btn-primary">Filter</button>
+            <div class="dropdown-content">
+              <a href="#">Priority</a>
+              <a href="#">Date</a>
+              <a href="#">Status</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
     </div>
-   
-    
-    
-   
   </div>
+</nav>
+
+<div class="container">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Ticket Id</th>
+        <th scope="col">Project name</th>
+        <th scope="col">Request Type</th>
+        <th scope="col">Priority</th>
+        <th scope="col">BU</th>
+
+        <th scope="col">Travel city</th>
+        <th scope="col">Date of Submisson</th>
+        <th scope="col">Date of Updation</th>
+        <th scope="col">Status</th>
+        <th scope="col">Employee Id</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ticketData | paginate: { itemsPerPage: count, currentPage: p }">
+        <td>{{item.id}}</td>
+        <td>{{item.projectName}}</td>
+        <td>{{item.requestType}}</td>
+        <td>{{item.priority}}</td>
+        <td>{{item.businessunit}}</td>
+
+        <td>{{item.travelCity}}</td>
+        <td>{{item.createdAt}}</td>
+        <td>{{item.updatedAt}}</td>
+        <td>{{item.status}}</td>
+        <td>{{item.employee.userName}}</td>
+        <td>
+           <div class="dropdown nav-link">
+                      <button class="dropbtn  btn">Status</button>
+                      <div class="dropdown-content">
+                          <a href="#">Approved</a>
+                          <a href="#">Reject</a>
+                        </div>
+                    </div>
+          <!-- <a class="btn btn-sm btn-primary" [routerLink] = "['/admin/updateTicketInfo',item.id]" >ViewTicket</a> -->
+        </td>
+        <td>
+                    <a class="btn btn-sm btn-primary" role="button" [routerLink] = "">attachment</a>
+                  </td>
+
+
+        <td><a href="#">Add comment</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <!--Including the pagination control.-->
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+
+
+
+</div>
