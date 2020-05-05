@@ -89,7 +89,7 @@ export class UserDataService {
     public updateStatus(status, ticketId) {
         console.log(ticketId);
 
-        return this.http.patch("http://localhost:9090/admin/ticket/" +  1 , {status})
+        return this.http.patch("http://localhost:9090/admin/ticket/" +  ticketId , {status})
     }
 
 }
