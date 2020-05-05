@@ -105,11 +105,21 @@
                                 Address</label>
                             <div class="col-md-6">
                                 <input type="text" id="permanent_address"
-                                    placeholder="please enter your Permanent address"
-                                    [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" class="form-control"
+                                    placeholder="please enter your Permanent address" class="form-control"
                                     formControlName="address2" [(ngModel)]="user.address2">
-                                <div *ngIf="submitted && f.address2.errors" class="invalid-feedback">
-                                    <div *ngIf="f.address2.errors.required">Prmanent address is required</div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Country"
+                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Country</label>
+                            <div class="col-md-6">
+                                <input type="text" id="Country" placeholder="please enter country"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Country.errors }" class="form-control"
+                                    formControlName="Country" [(ngModel)]="user.country">
+                                <div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Country.errors.required">Country is required</div>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +137,9 @@
                         <div class="form-group row">
                             <label for="state" class="col-md-4 col-form-label text-md-right"><mark>*</mark>State</label>
                             <div class="col-md-6">
-                                <input type="text" id="state" placeholder="please enter State" [ngClass]="{ 'is-invalid': submitted && f.state.errors }"
-                                    class="form-control" formControlName="state" [(ngModel)]="user.state">
+                                <input type="text" id="state" placeholder="please enter State"
+                                    [ngClass]="{ 'is-invalid': submitted && f.state.errors }" class="form-control"
+                                    formControlName="state" [(ngModel)]="user.state">
                                 <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <div *ngIf="f.state.errors.required">State is required</div>
                                 </div>
@@ -136,18 +147,6 @@
                         </div>
 
 
-                        <div class="form-group row">
-                            <label for="Country"
-                                class="col-md-4 col-form-label text-md-right"><mark>*</mark>Country</label>
-                            <div class="col-md-6">
-                                <input type="text" id="Country" placeholder="please enter country"
-                                    [ngClass]="{ 'is-invalid': submitted && f.Country.errors }" class="form-control"
-                                    formControlName="Country" [(ngModel)]="user.country">
-                                <div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
-                                    <div *ngIf="f.Country.errors.required">Country is required</div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-group row">
                             <label for="zip_number" class="col-md-4 col-form-label text-md-right"><abbr

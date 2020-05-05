@@ -9,15 +9,15 @@ import { Ticket } from 'src/app/Ticket';
   styleUrls: ['./update-ticket.component.css']
 })
 export class UpdateTicketComponent implements OnInit {
-  ticket : Ticket = new Ticket()
-  id : any
-  ticketId : any
-  token : any
+  ticket: Ticket = new Ticket()
+  id: any
+  ticketId: any
+  token: any
   constructor(private actRoute: ActivatedRoute, private dataservice: UserDataService,
-   private router: Router) {
+    private router: Router) {
     this.ticketId = this.actRoute.snapshot.params.id;
-    this.id= (sessionStorage.getItem('id'));
-    this.token =(sessionStorage.getItem('token'));
+    this.id = (sessionStorage.getItem('id'));
+    this.token = (sessionStorage.getItem('token'));
     console.log(this.id)
     console.log(this.ticketId)
   }
@@ -27,15 +27,15 @@ export class UpdateTicketComponent implements OnInit {
 
   updateTicket() {
     console.log(this.ticket)
-    
-   
+
+
 
     let credential = {
       id: this.id,
       token: this.token
     }
-    
-    let response = this.dataservice.updateTicket(credential,this.ticket,this.ticketId);
+
+    let response = this.dataservice.updateTicket(credential, this.ticket, this.ticketId);
     response.subscribe();
     this.router.navigate(['/employee-dashboard'])
   }
