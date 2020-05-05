@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/user-data-service';
 import { Router } from '@angular/router';
+import { tokenName } from '@angular/compiler';
  
 @Component({
   selector: 'app-employee-dashboard',
@@ -16,19 +17,29 @@ export class EmployeeDashboardComponent implements OnInit {
   public showMe = false;
  
   ticketData : any
-  constructor(private service: UserDataService, private router : Router) { }
+  constructor(private service: UserDataService, private router : Router) {
+   
+
+   }
  
   ngOnInit(): void {
+  
+    console.log(length)
     let id = (sessionStorage.getItem('id'))
     let token = (sessionStorage.getItem('token'))
     console.log("hi this is token", token)
- 
+    console.log(id)
+    if(id == 'null') {
+      this.router.navigate(['/'])
+    }
+    else{
     let credential = {
       id: id,
       token: token
     }
     this.getTicket(credential)
   }
+}
  
   getTicket(credential) {
     console.log("----------", credential)
