@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from 'src/app/user-data-service';
 
 @Component({
   selector: 'app-adminview',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminview.component.css']
 })
 export class AdminviewComponent implements OnInit {
-
-  constructor() { }
+  p = 1;
+  count = 5;
+  ticketData : any
+  constructor(private service : UserDataService) {
+    let response = this.service.getAdminTickets()
+    response.subscribe(data => this.ticketData = data)
+   }
 
   ngOnInit(): void {
+
+    
   }
 
 }

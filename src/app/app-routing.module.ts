@@ -38,6 +38,8 @@ const routes: Routes = [
     path: 'employee-dashboard/update/:id' , component : UpdateTicketComponent,
   },
 
+  
+
   //admin router
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'adminview', component: AdminviewComponent },

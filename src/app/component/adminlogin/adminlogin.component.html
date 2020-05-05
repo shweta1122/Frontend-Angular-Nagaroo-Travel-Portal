@@ -8,10 +8,12 @@
     </div>
 
     <!-- Login Form -->
-    <form action="main" id="loginForm">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" routerLink="/adminview" value="Log In">
+    <form #form ="ngForm" >
+      <input type="text" id="login" class="fadeIn second" name="userName" placeholder="username"    #fieldOne="ngModel"
+       ngModel [class.field-error]="form.submitted && fieldOne.invalid">  >
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password"    #fieldTwo="ngModel"
+       ngModel [class.field-error]="form.submitted && fieldTwo.invalid" >
+      <input type="button" class="fadeIn fourth" value="Log In " (click)="login(form)">
     </form>
   </div>
 </div>
