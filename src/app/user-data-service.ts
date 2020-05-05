@@ -92,9 +92,13 @@ export class UserDataService {
         return this.http.patch("http://localhost:9090/admin/ticket/" +  ticketId , {status})
     }
 
-    public updateDoc(data,employeeId,TicketId){
-        return this.http.post("http://localhost:9090/admin/1/" +employeeId +"/"+TicketId+"/uploadDoc",
+    public updateDoc(data){
+        return this.http.post("http://localhost:9090/admin/1/uploadDoc",
         data,  { responseType: 'text' as 'json' })
     }
 
-}
+    public downloadDoc(TicketId) {
+        return this.http.get("http://localhost:9090/employee/2/ticketDoc")
+    }
+
+} 

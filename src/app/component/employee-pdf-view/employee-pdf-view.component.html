@@ -1,0 +1,11 @@
+<div class="container">
+    <h3>Responses from Admin Panel.</h3>
+    <p>A list of comments and related documents.</p>
+    <div>
+        <div class="card-body" *ngIf='comments'>
+            <p class="card-text">{{comments.comments}}</p>
+
+            <button class="btn btn-primary" (click)="display(comments)">Download</button>
+        </div>
+    </div>
+</div>

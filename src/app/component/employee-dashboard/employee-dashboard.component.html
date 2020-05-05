@@ -13,6 +13,7 @@
               <li class="nav-item">
                   <a class="nav-link" role = "button" (click) = "logOut()">Logout</a>
               </li>
+             
               
           </ul>
 
@@ -47,6 +48,8 @@
         <td>
           <a class="btn btn-sm btn-primary" [routerLink] = "['/employee-dashboard/update',item.id]" >Edit</a>
         </td>
+        <a class="btn btn-sm btn-primary" [routerLink] = "['/employee-dashboard/viewTicketDoc',item.id]" >viewTicketDoc</a>
+        
       </tr>
     </tbody>
   </table>

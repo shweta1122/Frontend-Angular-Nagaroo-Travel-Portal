@@ -14,6 +14,7 @@ import { EmployeeDashboardComponent } from './component/employee-dashboard/emplo
 import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
 import { UpdateTicketComponent } from './component/update-ticket/update-ticket.component';
 import { PdfUploadComponent } from './component/pdf-upload/pdf-upload.component';
+import { EmployeePdfViewComponent } from './component/employee-pdf-view/employee-pdf-view.component';
 
 const routes: Routes = [
 
@@ -39,6 +40,10 @@ const routes: Routes = [
   
   {
     path: 'adminview/uploadPdf/:ticketId/:employeeId' , component :PdfUploadComponent ,
+  },
+
+  {
+    path : 'employee-dashboard/viewTicketDoc/:ticketId', component : EmployeePdfViewComponent
   },
 
   

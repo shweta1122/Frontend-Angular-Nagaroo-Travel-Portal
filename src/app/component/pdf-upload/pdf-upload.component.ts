@@ -11,6 +11,7 @@ export class PdfUploadComponent implements OnInit {
   ticketId : any
   employeeId : any
   comments: string
+  file : any
   constructor(private actRoute: ActivatedRoute, private dataservice: UserDataService,
     private router: Router) {
 
@@ -27,7 +28,15 @@ export class PdfUploadComponent implements OnInit {
   }
 
   upload() {
-   let response = this.dataservice.updateDoc(this.comments,this.employeeId,this.ticketId)
+    console.log(this.file)
+    console.log(this.comments)
+    let body = {
+      file : this.file ,
+      employeeId : this.employeeId,
+      ticketId : this.ticketId,
+      comments : this.comments
+    }
+   let response = this.dataservice.updateDoc(body);
    response.subscribe(data=> console.log(data))
   }
 
