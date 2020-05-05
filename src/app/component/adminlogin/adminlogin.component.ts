@@ -26,10 +26,23 @@ export class AdminloginComponent implements OnInit {
      }
 
      let response = this.service.adminLogin(credential)
-     response.subscribe(data => console.log(data))
-     this.router.navigate(['/adminview'])
+     response.subscribe(data => this.redirectPage(data))
+    
 
   }
+
+  redirectPage(data) {
+    console.log(data)
+    if(data === 'succesfull')
+    this.router.navigate(['/adminview'])
+    else {
+      alert(data)
+    }
+
+  }
+
+
+
 
 
 

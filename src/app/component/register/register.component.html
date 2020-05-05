@@ -5,13 +5,17 @@
             <div class="card">
                 <div class="card-header"><b>Register</b></div>
                 <div class="card-body">
-                    <form name="my-form" action="" method="">
+                    <form name="my-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <div class="form-group row">
                             <label for="first_name" class="col-md-4 col-form-label text-md-right"><mark>*</mark>First
                                 Name</label>
                             <div class="col-md-6">
-                                <input type="text" id="fisrt_name" class="form-control" name="firstName"
-                                    [(ngModel)]="user.firstName">
+                                <input type="text" id="fisrt_name" placeholder="please enter your first name"
+                                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" class="form-control"
+                                    formControlName="firstName" [(ngModel)]="user.firstName" required>
+                                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -19,8 +23,12 @@
                             <label for="last_name" class="col-md-4 col-form-label text-md-right"><mark>*</mark>Last
                                 Name</label>
                             <div class="col-md-6">
-                                <input type="text" id="last_name" class="form-control" name="lastName"
-                                    [(ngModel)]="user.lastName">
+                                <input type="text" id="last_name" placeholder="please enter your last name"
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" class="form-control"
+                                    formControlName="lastName" [(ngModel)]="user.lastName">
+                                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -29,16 +37,24 @@
                                 class="col-md-4 col-form-label text-md-right"><mark>*</mark>Business
                                 Unit</label>
                             <div class="col-md-6">
-                                <input type="text" id="business-unit" class="form-control" name="businessUnit"
-                                    [(ngModel)]="user.businessUnit">
+                                <input type="text" id="business-unit" placeholder="please enter your Business Unit"
+                                    [ngClass]="{ 'is-invalid': submitted && f.businessUnit.errors }"
+                                    class="form-control" formControlName="businessUnit" [(ngModel)]="user.businessUnit">
+                                <div *ngIf="submitted && f.businessUnit.errors" class="invalid-feedback">
+                                    <div *ngIf="f.businessUnit.errors.required">Business unit is required</div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="title" class="col-md-4 col-form-label text-md-right"><mark>*</mark>Title</label>
                             <div class="col-md-6">
-                                <input type="text" id="title" class="form-control" name="title"
-                                    [(ngModel)]="user.title">
+                                <input type="text" id="title" placeholder="please enter Title"
+                                    [ngClass]="{ 'is-invalid': submitted && f.title.errors }" class="form-control"
+                                    formControlName="title" [(ngModel)]="user.title">
+                                <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                                    <div *ngIf="f.title.errors.required">Title is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -46,8 +62,13 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right"><mark>*</mark>E-Mail
                             </label>
                             <div class="col-md-6">
-                                <input type="email" id="username" class="form-control" name="username"
-                                    [(ngModel)]="user.userName">
+                                <input type="email" id="username"
+                                    placeholder="please enter your E-Mail (abc@nagarro.com)"
+                                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" class="form-control"
+                                    formControlName="username" [(ngModel)]="user.userName">
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">E-mail is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -55,8 +76,12 @@
                             <label for="Telephone"
                                 class="col-md-4 col-form-label text-md-right"><mark>*</mark>Telephone</label>
                             <div class="col-md-6">
-                                <input type="text" id="Telephone" class="form-control" name="phoneNumber"
-                                    [(ngModel)]="user.phoneNumber">
+                                <input type="text" id="Telephone" placeholder="please enter your Telephone number"
+                                    [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" class="form-control"
+                                    formControlName="phoneNumber" [(ngModel)]="user.phoneNumber">
+                                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phoneNumber.errors.required">Telephone is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -65,8 +90,12 @@
                                 class="col-md-4 col-form-label text-md-right"><mark>*</mark>Present
                                 Address</label>
                             <div class="col-md-6">
-                                <input type="text" id="present_address" class="form-control" name="address1"
-                                    [(ngModel)]="user.address1">
+                                <input type="text" id="present_address" placeholder="please enter your present address"
+                                    [ngClass]="{ 'is-invalid': submitted && f.address1.errors }" class="form-control"
+                                    formControlName="address1" [(ngModel)]="user.address1">
+                                <div *ngIf="submitted && f.address1.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address1.errors.required">present address is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -75,26 +104,34 @@
                                 class="col-md-4 col-form-label text-md-right"><mark>*</mark>Permanent
                                 Address</label>
                             <div class="col-md-6">
-                                <input type="text" id="permanent_address" class="form-control" name="address2"
-                                    [(ngModel)]="user.address2">
+                                <input type="text" id="permanent_address"
+                                    placeholder="please enter your Permanent address"
+                                    [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" class="form-control"
+                                    formControlName="address2" [(ngModel)]="user.address2">
+                                <div *ngIf="submitted && f.address2.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address2.errors.required">Prmanent address is required</div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="city" class="col-md-4 col-form-label text-md-right"><mark>*</mark>City</label>
                             <div class="col-md-6">
-                                <input type="text" id="city" class="form-control" name="city" [(ngModel)]="user.city">
+                                <input type="text" id="city" placeholder="please enter City"
+                                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }" class="form-control"
+                                    formControlName="city" [(ngModel)]="user.city">
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">City is required</div>
+                                </div>
                             </div>
                         </div>
-
-
-
-
-
                         <div class="form-group row">
                             <label for="state" class="col-md-4 col-form-label text-md-right"><mark>*</mark>State</label>
                             <div class="col-md-6">
-                                <input type="text" id="state" class="form-control" name="state"
-                                    [(ngModel)]="user.state">
+                                <input type="text" id="state" placeholder="please enter State" [ngClass]="{ 'is-invalid': submitted && f.state.errors }"
+                                    class="form-control" formControlName="state" [(ngModel)]="user.state">
+                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                    <div *ngIf="f.state.errors.required">State is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -103,8 +140,12 @@
                             <label for="Country"
                                 class="col-md-4 col-form-label text-md-right"><mark>*</mark>Country</label>
                             <div class="col-md-6">
-                                <input type="text" id="Country" class="form-control" name="Country"
-                                    [(ngModel)]="user.country">
+                                <input type="text" id="Country" placeholder="please enter country"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Country.errors }" class="form-control"
+                                    formControlName="Country" [(ngModel)]="user.country">
+                                <div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Country.errors.required">Country is required</div>
+                                </div>
                             </div>
                         </div>
 
@@ -112,12 +153,17 @@
                             <label for="zip_number" class="col-md-4 col-form-label text-md-right"><abbr
                                     title="National Id Card"><mark>*</mark>ZIP</abbr> Number</label>
                             <div class="col-md-6">
-                                <input type="text" id="zip_number" class="form-control" name="zip-number"
-                                    [(ngModel)]="user.zip">
+                                <input type="text" id="zip_number" placeholder="please enter your zip number"
+                                    [ngClass]="{ 'is-invalid': submitted && f.zip_number.errors }" class="form-control"
+                                    formControlName="zip_number" [(ngModel)]="user.zip">
+                                <div *ngIf="submitted && f.zip_number.errors" class="invalid-feedback">
+                                    <div *ngIf="f.zip_number.errors.required">Zip Number is required</div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 offset-md-5">
-                            <input type="submit" class="fadeIn fourth" routerLink="/review" value="Submit">
+                            <input type="submit" class="fadeIn fourth" value="Submit">
+                            <!-- <input type="submit" class="fadeIn fourth" routerLink="/review" value="Submit"> -->
                         </div>
                     </form>
                 </div>

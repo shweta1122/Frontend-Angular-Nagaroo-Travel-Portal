@@ -14,7 +14,7 @@ import { AdminloginComponent } from './component/adminlogin/adminlogin.component
 import { AdminheaderComponent } from './component/adminheader/adminheader.component';
 import { AdminviewComponent } from './component/adminview/adminview.component';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { UserDataService } from './user-data-service';
 import { EmployeeDashboardComponent } from './component/employee-dashboard/employee-dashboard.component';
 import { AddTicketComponent } from './component/add-ticket/add-ticket.component';
@@ -44,7 +44,8 @@ import { UpdateTicketComponent } from './component/update-ticket/update-ticket.c
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers:
     [UserDataService],
