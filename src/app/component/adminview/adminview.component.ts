@@ -16,7 +16,7 @@ export class AdminviewComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    
     
   }
 
@@ -27,5 +27,29 @@ export class AdminviewComponent implements OnInit {
     response.subscribe();
 
   }
+
+  dateSort(){
+   
+    this.ticketData.sort((a,b)=>{return a.createdAt - b.createdAt});
+    
+  }
+  prioritySort()
+  {
+   
+    
+    this.ticketData.sort((a,b)=>{return  a.priority - b.priority});
+   
+    
+  }
+   
+  filterTicket(search: string) {
+    this.ticketData = this.ticketData.filter(o =>
+      Object.keys(o).some(k => {
+        if (typeof o[k] === 'string')
+          return o[k].toLowerCase().includes(search.toLowerCase());
+      })
+    );
+  }
+  
 
 }

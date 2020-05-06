@@ -49,6 +49,20 @@ color: #f6ac3d;
   display: block;
 }
 
+.table {
+  display:table;
+  margin-right:auto;
+  margin-left:auto;
+  width:150%;
+}
+
+ 
+
+.tablecell {
+  display:table-cell;
+  text-align:center;
+}
+
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
