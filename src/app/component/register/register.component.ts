@@ -34,6 +34,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       username: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       phoneNumber: ['', [Validators.required, Validators.pattern("^((\\+{2}-?)|0)?[0-9]{10}$")]],
       address1: ['', Validators.required],
+      address2: ['', Validators.nullValidator],
       city: ['', Validators.required],
       state: ['', Validators.required],
       Country: ['', Validators.required],

@@ -1,6 +1,7 @@
 import { User } from './user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Ticket } from './Ticket';
 
 
 @Injectable({
@@ -8,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserDataService {
     public user: User
+    public ticket : Ticket
 
 
     constructor(private http: HttpClient) { }

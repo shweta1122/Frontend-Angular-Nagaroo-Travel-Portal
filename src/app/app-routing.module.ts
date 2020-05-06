@@ -15,6 +15,7 @@ import { AddTicketComponent } from './component/add-ticket/add-ticket.component'
 import { UpdateTicketComponent } from './component/update-ticket/update-ticket.component';
 import { PdfUploadComponent } from './component/pdf-upload/pdf-upload.component';
 import { EmployeePdfViewComponent } from './component/employee-pdf-view/employee-pdf-view.component';
+import { TicketReviewComponent } from './component/ticket-review/ticket-review.component';
 
 const routes: Routes = [
 
@@ -35,8 +36,10 @@ const routes: Routes = [
     path: 'forgot', component: ForgotComponent,
 
   },
-
  
+    {
+      path: 'employee-dashboard/update/:ticketId' , component :UpdateTicketComponent,
+    },
   
   {
     path: 'adminview/uploadPdf/:ticketId/:employeeId' , component :PdfUploadComponent ,
@@ -44,6 +47,10 @@ const routes: Routes = [
 
   {
     path : 'employee-dashboard/viewTicketDoc/:ticketId', component : EmployeePdfViewComponent
+  },
+
+  {
+    path : 'ticketReview', component : TicketReviewComponent
   },
 
   

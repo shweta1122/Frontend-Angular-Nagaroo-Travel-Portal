@@ -23,6 +23,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { UpdateTicketComponent } from './component/update-ticket/update-ticket.component';
 import { PdfUploadComponent } from './component/pdf-upload/pdf-upload.component';
 import { EmployeePdfViewComponent } from './component/employee-pdf-view/employee-pdf-view.component';
+import { TicketReviewComponent } from './component/ticket-review/ticket-review.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EmployeePdfViewComponent } from './component/employee-pdf-view/employee
     AddTicketComponent,
     UpdateTicketComponent,
     PdfUploadComponent,
-    EmployeePdfViewComponent
+    EmployeePdfViewComponent,
+    TicketReviewComponent
   ],
   imports: [
     BrowserModule,

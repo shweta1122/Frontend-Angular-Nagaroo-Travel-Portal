@@ -1,0 +1,87 @@
+<app-header></app-header>
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div id="printsection">
+                <div class="card-header"><b> Ticket  Confirmation</b></div>
+                <div class="card-body">
+                    <form name="my-form" action="" method="">
+                        <div class="form-group row">
+                            <label for="first_name" class="col-md-4 col-form-label text-md-right">requestType :</label>
+                            <label for="first_name"
+                                class="col-md-4 col-form-label text-md-left">{{ticket.requestType}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="last_name" class="col-md-4 col-form-label text-md-right">priority :</label>
+                            <label for="last_name"
+                                class="col-md-4 col-form-label text-md-left">{{ticket.priority}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="business_unit" class="col-md-4 col-form-label text-md-right">travelCity
+                                 :</label>
+                            <label for="business_unit"
+                                class="col-md-4 col-form-label text-md-left">{{ticket.travelCity}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="title" class="col-md-4 col-form-label text-md-right">fromLocation :</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-left">{{ticket.fromLocation}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="username" class="col-md-4 col-form-label text-md-right">travelDate :
+                            </label>
+                            <label for="username" class="col-md-4 col-form-label text-md-left">{{ticket.travelDate}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Telephone" class="col-md-4 col-form-label text-md-right">endDate :</label>
+                            <label for="Telephone"
+                                class="col-md-4 col-form-label text-md-left">{{ticket.endDate}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="present_address" class="col-md-4 col-form-label text-md-right">passportNumber
+                                :</label>
+                            <label for="passportNumber"
+                                class="col-md-4 col-form-label text-md-left">{{ticket.passportNumber}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="permanent_address" class="col-md-4 col-form-label text-md-right">expenseBornBy
+                                :</label>
+                            <label for="permanent_address"
+                                class="col-md-4 col-form-label text-md-left">{{ticket.expenseBornBy}}</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-md-4 col-form-label text-md-right">projectName :</label>
+                            <label for="city" class="col-md-4 col-form-label text-md-left">{{ticket.projectName}}</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Country" class="col-md-4 col-form-label text-md-right">travelAprrover :</label>
+                            <label for="Country" class="col-md-4 col-form-label text-md-left">{{ticket.travelAprrover}}</label>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="zip_number" class="col-md-4 col-form-label text-md-right">additionalDetail :</label>
+                            <label for="additionalDetail" class="col-md-4 col-form-label text-md-left">{{ticket.additionalDetail}}</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="submit" (click)="printComponent('printsection')" value="Print">
+                            <input type="submit" routerLink="/addTicket" value="Edit">
+                            <input type="submit" value="Return to DashBoard" (click)="addTicket()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
