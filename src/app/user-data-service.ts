@@ -95,12 +95,13 @@ export class UserDataService {
     }
 
     public updateDoc(data){
-        return this.http.post("http://localhost:9090/admin/1/uploadDoc",
-        data,  { responseType: 'text' as 'json' })
+        console.log(data)
+        return this.http.post("http://localhost:9090/admin/uploadDoc",
+        data,{ responseType: 'text' as 'json' })
     }
 
     public downloadDoc(TicketId) {
-        return this.http.get("http://localhost:9090/employee/2/ticketDoc")
+        return this.http.get("http://localhost:9090/employee/" + TicketId+"/ticketDoc")
     }
 
 } 

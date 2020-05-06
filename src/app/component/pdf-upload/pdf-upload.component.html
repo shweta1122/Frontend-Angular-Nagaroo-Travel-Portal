@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
     <div class="form-group">
         <label for="exampleFormControlFile1">Choose File</label>
         <input type="file" class="form-control-file" id="file" [(ngModel)]="file" name="file">
@@ -10,4 +10,30 @@
     </div>
 
     <button type="button" class="btn btn-primary" (click)="upload()">Submit</button>
-</form>
+</form> -->
+
+<div class="container">
+    <form [formGroup]="uploadForm" (ngSubmit)="submitComment()">
+        <div class="form-group form-control">
+            <label>Comment:</label>&nbsp;
+            <input type="text" id="comments" name="comment" #comment required>
+        </div>
+        <div class="form-group form-control">
+            <label>Upload a document:</label>&nbsp;
+            <input type="file" name="file" (change)="onFileSelect($event)" #file>
+        </div>
+        <div class="form-group form-control">
+            <label>Change status:</label>&nbsp;
+            <select name="status" id="status" #status>
+                <option value="submitted">Submitted</option>
+                <option value="Resubmitted">ReSubmitted</option>
+                <option value="In Process">In Process</option>
+                <option value="Done">Done</option>
+            </select>
+        </div>
+
+    </form>
+    <div class="container">
+        <button type="button" class="btn btn-info" (click)="submitComment()">Upload and Add</button>
+    </div>
+    </div>

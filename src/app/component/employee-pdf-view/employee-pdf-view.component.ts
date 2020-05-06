@@ -14,7 +14,7 @@ export class EmployeePdfViewComponent implements OnInit {
   constructor(private activate: ActivatedRoute, private route: Router, private service
     : UserDataService) {
 
-    // console.log(this.activate.snapshot.params.ticketId)
+     console.log(this.activate.snapshot.params.ticketId)
     let response = service.downloadDoc(this.activate.snapshot.params.ticketId)
     response.subscribe(data => {
       // console.log(data);
@@ -28,8 +28,8 @@ export class EmployeePdfViewComponent implements OnInit {
   }
 
   display(comment) {
-    console.log(comment.pdf);
-    fetch(`data:application/pdf;base64,${comment.pdf}`)
+   
+    fetch(`data:application/pdf;base64,${comment.file}`)
       .then(res => res.blob())
       .then(blob => FileSaver.saveAs(blob, "adminResponse.pdf"))
   }
