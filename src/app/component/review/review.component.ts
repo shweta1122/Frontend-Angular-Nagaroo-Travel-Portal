@@ -23,6 +23,8 @@ export class ReviewComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log("------------")
+    console.log(this.dataservice.user);
+    
     this.user = this.dataservice.user
   }
 

@@ -9,7 +9,7 @@ import { Ticket } from './Ticket';
 })
 export class UserDataService {
     public user: User
-    public ticket : Ticket
+    public ticket: Ticket
 
 
     constructor(private http: HttpClient) { }
@@ -31,45 +31,26 @@ export class UserDataService {
     }
 
     public getTicket(credential) {
-        // console.log("---------------",credential.token)
-        let tokenStr = 'Bearer ' + credential.token;
-        // console.log(tokenStr)
-        const header = new HttpHeaders().set("Authorization", tokenStr)
-        console.log("---------", header)
-        let id = credential.id
-        console.log("this is id", id)
 
+        let tokenStr = 'Bearer ' + credential.token;
+        const header = new HttpHeaders().set("Authorization", tokenStr)
+        let id = credential.id
         return this.http.get("http://localhost:9090/employee/" + id + "/tickets", { headers: header })
     }
 
     public addTicket(credential, ticket) {
-        console.log("this is ricket", ticket)
-        //  console.log("---------------inside add a ticket",credential.token)
-        let tokenStr = 'Bearer ' + credential.token;
-        // console.log(tokenStr)
-        const header = new HttpHeaders().set("Authorization", tokenStr)
-        //  console.log("---------",header)
-
-        let id = credential.id
-        // console.log("this is id", id)
-
+       let tokenStr = 'Bearer ' + credential.token;
+       const header = new HttpHeaders().set("Authorization", tokenStr)
+       let id = credential.id
         return this.http.post("http://localhost:9090/employee/" + id + "/tickets", ticket, { headers: header })
 
     }
 
 
     public updateTicket(credential, ticket, ticketId) {
-        console.log("this is ricket", ticket)
-        console.log("---------------inside add a ticket", credential.token)
-        console.log(ticketId)
         let tokenStr = 'Bearer ' + credential.token;
-        // console.log(tokenStr)
         const header = new HttpHeaders().set("Authorization", tokenStr)
-        //  console.log("---------",header)
-
         let id = credential.id
-        // console.log("this is id", id)
-
         return this.http.put("http://localhost:9090/tickets/" + id + "/tickets/" + ticketId, ticket, { headers: header })
 
     }
@@ -83,25 +64,35 @@ export class UserDataService {
 
 
     public doRegistration(user) {
-        return this.http.post("http://localhost:9090/employee",
+       return this.http.post("http://localhost:9090/employee",
             user, { responseType: 'text' as 'json' });
     }
 
 
     public updateStatus(status, ticketId) {
-        console.log(ticketId);
-
-        return this.http.patch("http://localhost:9090/admin/ticket/" +  ticketId , {status})
+         return this.http.patch("http://localhost:9090/admin/ticket/" + ticketId, { status })
     }
 
-    public updateDoc(data){
+    public updateDoc(data) {
         console.log(data)
         return this.http.post("http://localhost:9090/admin/uploadDoc",
-        data,{ responseType: 'text' as 'json' })
+            data, { responseType: 'text' as 'json' })
     }
 
     public downloadDoc(TicketId) {
-        return this.http.get("http://localhost:9090/employee/" + TicketId+"/ticketDoc")
+        return this.http.get("http://localhost:9090/employee/" + TicketId + "/ticketDoc")
+    }
+
+    getCountries() {
+        return this.http.get('server/region/getCountryList');
+    }
+
+    getStates(stateId: number) {
+        return this.http.get('server/region/getStateList/' + stateId);
+    }
+
+    getCities(stateId: number) {
+        return this.http.get('server/region/getCityList/' + stateId);
     }
 
 } 

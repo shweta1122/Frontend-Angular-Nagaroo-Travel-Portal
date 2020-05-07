@@ -115,36 +115,48 @@
                             <label for="Country"
                                 class="col-md-4 col-form-label text-md-right"><mark>*</mark>Country</label>
                             <div class="col-md-6">
-                                <input type="text" id="Country" placeholder="please enter country"
-                                    [ngClass]="{ 'is-invalid': submitted && f.Country.errors }" class="form-control"
-                                    formControlName="Country" [(ngModel)]="user.country">
+                                <select id="country" [ngClass]="{ 'is-invalid': submitted && f.Country.errors }"
+                                    class="form-control" formControlName="country" (ngModelChange)="getState($event)">
+                                    <option *ngFor="let c of country" value='{{c["name"]}}' [ngValue]="c">
+                                        {{c["name"]}}</option>
+                                </select>
+
+
+
                                 <div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
                                     <div *ngIf="f.Country.errors.required">Country is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="state" class="col-md-4 col-form-label text-md-right"><mark>*</mark>State</label>
+                            <div class="col-md-6">
+                                <select id="state" placeholder="please enter State"
+                                    [ngClass]="{ 'is-invalid': submitted && f.state.errors }" class="form-control"
+                                    formControlName="state" [(ngModel)]="user.state" (ngModelChange)="getCity($event)">
+                                    <option *ngFor="let c of state" value='{{c["id"]}}' [ngValue]="c">{{c["name"]}}
+                                    </option>
+                                </select>
+                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                    <div *ngIf="f.state.errors.required">State is required</div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="city" class="col-md-4 col-form-label text-md-right"><mark>*</mark>City</label>
                             <div class="col-md-6">
-                                <input type="text" id="city" placeholder="please enter City"
+                                <select id="city" placeholder="please enter City"
                                     [ngClass]="{ 'is-invalid': submitted && f.city.errors }" class="form-control"
-                                    formControlName="city" [(ngModel)]="user.city">
+                                    formControlName="city" [(ngModel)]="user.city" (ngModelChange)="getValue($event)">
+                                    <option *ngFor="let c of city" value='{{c["name"]}}'>{{c["name"]}}</option>
+                                </select>
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                     <div *ngIf="f.city.errors.required">City is required</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="state" class="col-md-4 col-form-label text-md-right"><mark>*</mark>State</label>
-                            <div class="col-md-6">
-                                <input type="text" id="state" placeholder="please enter State"
-                                    [ngClass]="{ 'is-invalid': submitted && f.state.errors }" class="form-control"
-                                    formControlName="state" [(ngModel)]="user.state">
-                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
-                                    <div *ngIf="f.state.errors.required">State is required</div>
-                                </div>
-                            </div>
-                        </div>
+
 
 
 
@@ -162,7 +174,7 @@
                         </div>
                         <div class="col-md-6 offset-md-5">
                             <input type="submit" class="fadeIn fourth" value="Submit">
-                            <!-- <input type="submit" class="fadeIn fourth" routerLink="/review" value="Submit"> -->
+
                         </div>
                     </form>
                 </div>
