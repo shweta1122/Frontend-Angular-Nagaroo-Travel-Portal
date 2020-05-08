@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from 'src/app/Ticket';
-import { UserDataService } from 'src/app/user-data-service';
+import { Ticket } from 'src/app/model/Ticket';
+import { UserDataService } from 'src/app/services/user-data-service';
 import { Router } from '@angular/router';
 
 @Component({

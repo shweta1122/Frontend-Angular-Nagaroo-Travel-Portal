@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from 'src/app/user-data-service';
+import { UserDataService } from 'src/app/services/user-data-service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -19,7 +19,6 @@ export class AdminloginComponent implements OnInit {
 
     let userName = form.value.userName
     let password = form.value.password
-     console.log("reached")
      let credential = {
        "userName": userName,
        "password": password

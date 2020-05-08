@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, ActivatedRoute, Router } from '@angular/router';
-import { UserDataService } from 'src/app/user-data-service';
+import { UserDataService } from 'src/app/services/user-data-service';
 import * as FileSaver from 'file-saver';
 
 @Component({

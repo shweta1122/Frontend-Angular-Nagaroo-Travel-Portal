@@ -1,7 +1,7 @@
-import { User } from './user';
+import { User } from '../model/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Ticket } from './Ticket';
+import { Ticket } from '../model/Ticket';
 
 
 @Injectable({
@@ -56,7 +56,9 @@ export class UserDataService {
     }
 
     public forgotPassword(userName) {
-        return this.http.post("http://localhost:9090/employee/forgot",
+        console.log(userName);
+        
+        return this.http.patch("http://localhost:9090/forgot",
             userName);
     }
 
@@ -83,16 +85,5 @@ export class UserDataService {
         return this.http.get("http://localhost:9090/employee/" + TicketId + "/ticketDoc")
     }
 
-    getCountries() {
-        return this.http.get('server/region/getCountryList');
-    }
-
-    getStates(stateId: number) {
-        return this.http.get('server/region/getStateList/' + stateId);
-    }
-
-    getCities(stateId: number) {
-        return this.http.get('server/region/getCityList/' + stateId);
-    }
-
+   
 } 

@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header"><b>Forgot Username & Password</b></div>
                 <div class="card-body">
-                    <form name="my-form" action="" method="">
+                    <form name="my-form"  #form  (ngSubmit)= "onSubmit(form)">
                         <div>
                             <p><b><mark>*</mark>Please enter your e-mail address on title and your information will be
                                     e-mailed to you.</b></p>
@@ -16,11 +16,11 @@
                             </label>
                             <div class="col-md-6">
                                 <input type="email" id="username" placeholder="abc@nagarro.com" class="form-control"
-                                    name="username" ngModel = "email"required>
+                                    name="username" ngModel = "email" required>
                             </div>
                         </div>
                         <div class="col-md-10 offset-md-4">
-                            <input type="submit" (click) = "onSubmit()" value="Submit">
+                            <input type="submit"  value="Submit">
                             <input type="submit" routerLink="/login" value="Back to the Log-In Page">
                         </div>
                     </form>

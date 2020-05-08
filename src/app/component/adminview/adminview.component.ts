@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from 'src/app/user-data-service';
+import { UserDataService } from 'src/app/services/user-data-service';
 
 @Component({
   selector: 'app-adminview',

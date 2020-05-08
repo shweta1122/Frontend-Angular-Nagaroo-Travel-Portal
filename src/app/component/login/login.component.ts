@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from 'src/app/user-data-service';
+import { UserDataService } from 'src/app/services/user-data-service';
 import { tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
     }
     console.log(credential)
     let response = this.service.doLogin(credential);
-    response.subscribe(data => this.sendCredential(data));
+    response.subscribe(data => this.sendCredential(data),
+    error => alert('Invalid Login Credentials'));
     
   }
 
@@ -39,8 +40,6 @@ export class LoginComponent implements OnInit {
     let token = credential.token
     sessionStorage.setItem('id' , id)
     sessionStorage.setItem('token' , token)
-    // let response = this.service.getTicket(credential);
-    // response.subscribe(data => this.sendTicket(data))
     this.router.navigate(['/employee-dashboard'])
   }
 

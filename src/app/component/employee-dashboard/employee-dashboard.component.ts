@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataService } from 'src/app/user-data-service';
+import { UserDataService } from 'src/app/services/user-data-service';
 import { Router } from '@angular/router';
 import { tokenName } from '@angular/compiler';
  

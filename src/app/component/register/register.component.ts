@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { User } from 'src/app/user';
-import { UserDataService } from 'src/app/user-data-service';
+import { User } from 'src/app/model/user';
+import { UserDataService } from 'src/app/services/user-data-service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RegionsService } from 'src/app/services/region-service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
   countryCode: any;
   stateCode: any;
 
-  constructor(public dataservice: UserDataService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(public dataservice: RegionsService, private router: Router, private formBuilder: FormBuilder,
+    private userService : UserDataService) {
     this.dataservice.getCountries().subscribe(
       data => {
 
@@ -40,7 +42,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    this.dataservice.user = this.user
+    this.userService.user = this.user
   }
 
 

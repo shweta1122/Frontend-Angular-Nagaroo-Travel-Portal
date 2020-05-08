@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserDataService } from 'src/app/user-data-service';
-import { Ticket } from 'src/app/Ticket';
+import { UserDataService } from 'src/app/services/user-data-service';
+import { Ticket } from 'src/app/model/Ticket';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserDataService } from 'src/app/user-data-service';
-import { User } from 'src/app/user';
+import { UserDataService } from 'src/app/services/user-data-service';
+import { User } from 'src/app/model/user';
 import { Router } from '@angular/router';
 
 @Component({
